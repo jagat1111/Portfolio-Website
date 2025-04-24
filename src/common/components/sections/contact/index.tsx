@@ -1,15 +1,50 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { useSectionInView } from "@/common/lib/hooks";
 import SubmitBtn from "./_components/submit-btn";
 import SectionHeading from "@/common/components/shared/section-heading";
 import toast from "react-hot-toast";
-import { sendEmail } from "@/common/utils/actions/send-email";
 
 export default function Contact() {
   const { ref } = useSectionInView("contact");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    const formData = new FormData(e.currentTarget);
+    const senderEmail = formData.get("senderEmail");
+    const message = formData.get("message");
+
+    try {
+      const response = await fetch("/api/send-email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          senderEmail,
+          message,
+        }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || "Failed to send email");
+      }
+
+      toast.success("Email sent successfully!");
+      e.currentTarget.reset();
+    } catch (error) {
+      toast.error(error instanceof Error ? error.message : "Failed to send email");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
     <motion.section
@@ -41,16 +76,7 @@ export default function Contact() {
 
         <form
           className="mt-10 flex flex-col dark:text-black"
-          action={async (formData) => {
-            const { error } = await sendEmail(formData);
-
-            if (error) {
-              toast.error(error);
-              return;
-            }
-
-            toast.success("Email sent successfully!");
-          }}
+          onSubmit={handleSubmit}
         >
           <input
             className="h-14 rounded-lg border bg-gray-50 px-4 transition-all dark:bg-white dark:bg-opacity-80 dark:placeholder:text-darkBg dark:focus:bg-opacity-100"
@@ -68,7 +94,7 @@ export default function Contact() {
             maxLength={5000}
           />
           <div className="flex justify-center">
-            <SubmitBtn />
+            <SubmitBtn isSubmitting={isSubmitting} />
           </div>
         </form>
       </div>
