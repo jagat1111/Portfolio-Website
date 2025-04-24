@@ -40,7 +40,13 @@ export default function Contact() {
       toast.success("Email sent successfully!");
       e.currentTarget.reset();
     } catch (error) {
-      toast.error(error instanceof Error ? error.message : "Failed to send email");
+      const errorMessage = error instanceof Error ? error.message : "Failed to send email";
+      toast.error(errorMessage);
+      
+      // If the error is about email service not being configured, show a more helpful message
+      if (errorMessage.includes("not configured")) {
+        toast.error("Please contact me directly at yadavjatin923@gmail.com");
+      }
     } finally {
       setIsSubmitting(false);
     }
