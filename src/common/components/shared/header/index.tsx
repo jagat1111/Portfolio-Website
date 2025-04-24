@@ -14,7 +14,7 @@ export default function Header() {
 
   const handleClick = (e: any, id: string) => {
     smoothScrollTo({ e, id });
-    setActiveSection(id);
+    setActiveSection(id as 'about' | 'home' | 'projects' | 'Education' | 'skills' | 'Certificate' | 'contact');
     setTimeOfLastClick(Date.now());
     setMenuOpen(false);
   };
