@@ -3,9 +3,14 @@
 ![Next.js](https://img.shields.io/badge/Next.js-14-000000?style=for-the-badge&logo=nextdotjs)
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
 ![Framer Motion](https://img.shields.io/badge/Framer%20Motion-0055FF?style=for-the-badge&logo=framer&logoColor=white)
-![image](https://github.com/user-attachments/assets/c7dde192-6716-4b57-887e-dcadf4daa6d5)
 
-### Welcome to my portfolio project! This project showcases my skills and experience in web development using modern technologies like Next.js, Tailwind CSS, Framer Motion, and more. 
+# ABOUT ME
+
+I'm a Front-end developer with expertise in TypeScript, React & Next.js. Proven ability to deliver user-centered web applications with a focus on intuitive experiences and user interaction.
+
+Seeking Web Development opportunities where I can leverage my skills to create meaningful connections between products and users.
+
+So if you are interested, [CONTACT ME!](#contact)
 
 ## Features
 
