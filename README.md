@@ -4,6 +4,10 @@
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
 ![Framer Motion](https://img.shields.io/badge/Framer%20Motion-0055FF?style=for-the-badge&logo=framer&logoColor=white)
 
+# PHOTOS
+![image](https://github.com/user-attachments/assets/14279386-e9c8-42d4-a33b-31959b899635)
+
+
 # ABOUT ME
 
 I'm a Front-end developer with expertise in TypeScript, React & Next.js. Proven ability to deliver user-centered web applications with a focus on intuitive experiences and user interaction.
@@ -80,6 +84,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Contact
 
-If you want to get in touch, you can reach me at [Maksym Azimov](mailto:azimov.workspace@gmail.com).
+If you want to get in touch, you can reach me at [Jatin Yadav](mailto:yadavjatin923@gmail.com).
 
 Thank you for checking out my portfolio project!
