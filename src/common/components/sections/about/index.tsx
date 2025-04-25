@@ -43,7 +43,7 @@ export default function About() {
           }}
         >
           <div className="group relative w-full flex flex-col items-center gap-8 lg:flex-row lg:items-center">
-            
+
             {/* Image - moved above text to appear left in lg:flex-row */}
             <div className="relative h-60 w-60 sm:h-72 sm:w-72 md:h-80 md:w-80 lg:h-[300px] lg:w-[300px] xl:h-[400px] xl:w-[400px]">
               <div className="absolute inset-0 z-10 rounded-full bg-gradient-to-b from-[#212121] via-[#585756] to-[#f0e7e4] opacity-40" />
@@ -56,6 +56,7 @@ export default function About() {
                   className="z-20 rounded-full object-cover"
                 />
               </div>
+
             </div>
 
             {/* Text Content */}
