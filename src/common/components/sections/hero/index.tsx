@@ -38,7 +38,7 @@ export default function Hero() {
           crossOrigin="anonymous"
           className="absolute -z-10 h-screen w-screen object-cover pointer-events-none select-none"
         >
-          <source src="https://videos.pexels.com/video-files/31789494/13542280_2560_1440_30fps.mp4" type="video/mp4" />
+          <source src="layout.mp4" type="video/mp4" />
         </video>
 
         <div className="container flex flex-col items-start justify-center tracking-wide text-black dark:text-white">
