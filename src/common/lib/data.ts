@@ -67,7 +67,7 @@ export const projectsData = [
   {
     title: 'Ecommerce Sales Dashboard',
     description:
-      'A platform for decentralized file storage with robust user management.',
+      'Track, analyze, and optimize your online store performance in real-time.',
     tags: ["PowerBI", "Data Analysis", "Data Visualization"],
     imageUrl: filedriveImg,
     link: 'https://github.com/Jatin-0307/Ecommerce-Sales-Dashboard-using-power-BI.git',

@@ -1,52 +1,64 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { useSectionInView } from "@/common/lib/hooks";
 import SubmitBtn from "./_components/submit-btn";
 import SectionHeading from "@/common/components/shared/section-heading";
 import toast from "react-hot-toast";
+import emailjs from "@emailjs/browser";
 
 export default function Contact() {
   const { ref } = useSectionInView("contact");
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const formRef = useRef<HTMLFormElement>(null);
+  const [email, setEmail] = useState("");
+  
+  // Initialize EmailJS when component mounts
+  useEffect(() => {
+    emailjs.init(process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || "");
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    const formData = new FormData(e.currentTarget);
-    const senderEmail = formData.get("senderEmail");
-    const message = formData.get("message");
-
     try {
-      const response = await fetch("/api/send-email", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          senderEmail,
-          message,
-        }),
-      });
+      if (!formRef.current) return;
 
-      const data = await response.json();
+      // Create a hidden input for the name field (used for display in template)
+      const hiddenNameInput = document.createElement("input");
+      hiddenNameInput.type = "hidden";
+      hiddenNameInput.name = "name";
+      hiddenNameInput.value = email; // Use the email as the name
+      formRef.current.appendChild(hiddenNameInput);
 
-      if (!response.ok) {
-        throw new Error(data.error || "Failed to send email");
-      }
+      // Create a hidden input for the email field (used for display in template)
+      const hiddenEmailInput = document.createElement("input");
+      hiddenEmailInput.type = "hidden";
+      hiddenEmailInput.name = "email";
+      hiddenEmailInput.value = email; // Use the email as the email display
+      formRef.current.appendChild(hiddenEmailInput);
+
+      await emailjs.sendForm(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "",
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "",
+        formRef.current
+      );
+
+      // Remove the hidden inputs after sending
+      formRef.current.removeChild(hiddenNameInput);
+      formRef.current.removeChild(hiddenEmailInput);
 
       toast.success("Email sent successfully!");
-      e.currentTarget.reset();
+      formRef.current.reset();
+      setEmail("");
     } catch (error) {
+      console.error("Failed to send email:", error);
       const errorMessage = error instanceof Error ? error.message : "Failed to send email";
       toast.error(errorMessage);
       
-      // If the error is about email service not being configured, show a more helpful message
-      if (errorMessage.includes("not configured")) {
-        toast.error("Please contact me directly at yadavjatin923@gmail.com");
-      }
+      toast.error("Please contact me directly at yadavjatin923@gmail.com");
     } finally {
       setIsSubmitting(false);
     }
@@ -81,16 +93,19 @@ export default function Contact() {
         </p>
 
         <form
+          ref={formRef}
           className="mt-10 flex flex-col dark:text-black"
           onSubmit={handleSubmit}
         >
           <input
             className="h-14 rounded-lg border bg-gray-50 px-4 transition-all dark:bg-white dark:bg-opacity-80 dark:placeholder:text-darkBg dark:focus:bg-opacity-100"
-            name="senderEmail"
+            name="from_email"
             type="email"
             required
             maxLength={500}
             placeholder="Your email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
           />
           <textarea
             className="my-3 h-52 resize-none rounded-lg border bg-gray-50 p-4 transition-all dark:bg-opacity-80 dark:outline-none dark:placeholder:text-darkBg dark:focus:bg-opacity-100"

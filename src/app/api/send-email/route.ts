@@ -1,12 +1,9 @@
 import { NextResponse } from 'next/server';
-import React from 'react';
-import { Resend } from 'resend';
-
-import ContactFormEmail from '@/common/components/sections/contact/_components/contact-form-email';
 import { validateString } from '@/common/lib/utils';
 
-// Only initialize Resend if we have an API key
-const resend = process.env.RESEND_API_KEY ? new Resend(process.env.RESEND_API_KEY) : null;
+const EMAILJS_SERVICE_ID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
+const EMAILJS_TEMPLATE_ID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
+const EMAILJS_PUBLIC_KEY = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
 
 export async function POST(request: Request) {
   try {
@@ -26,29 +23,44 @@ export async function POST(request: Request) {
       );
     }
 
-    if (!resend) {
+    // Check if the EmailJS configuration is set
+    if (!EMAILJS_SERVICE_ID || !EMAILJS_TEMPLATE_ID || !EMAILJS_PUBLIC_KEY) {
+      console.error('Missing EmailJS configuration');
       return NextResponse.json(
         { error: 'Email service not configured' },
         { status: 500 },
       );
     }
 
-    const data = await resend.emails.send({
-      from: 'onboarding@resend.dev',
-      to: ['yadavjatin923@gmail.com'],
-      subject: 'Message from contact form | PORTFOLIO',
-      reply_to: senderEmail,
-      react: React.createElement(ContactFormEmail, {
+    // Prepare data for EmailJS
+    const data = {
+      service_id: EMAILJS_SERVICE_ID,
+      template_id: EMAILJS_TEMPLATE_ID,
+      user_id: EMAILJS_PUBLIC_KEY,
+      template_params: {
+        from_email: senderEmail,
         message: message,
-        senderEmail: senderEmail,
-      }),
+      }
+    };
+
+    const response = await fetch('https://api.emailjs.com/api/v1.0/email/send', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
     });
 
-    return NextResponse.json({ data });
+    if (!response.ok) {
+      throw new Error(`EmailJS API error: ${response.status}`);
+    }
+
+    return NextResponse.json({ success: true });
   } catch (error) {
+    console.error('Email sending error:', error);
     return NextResponse.json(
-      { error: 'Failed to send email' },
+      { error: error instanceof Error ? error.message : 'Failed to send email' },
       { status: 500 },
     );
   }
-} 
+}
