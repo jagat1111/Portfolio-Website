@@ -81,6 +81,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Contact
 
-If you want to get in touch, you can reach me at [Jatin Yadav](mailto:yadavjatin923@gmail.com).
+If you want to get in touch, you can reach me at [Jagatpati Parida](mailto:jagat0422@gmail.com).
 
 Thank you for checking out my portfolio project!
