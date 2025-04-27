@@ -52,7 +52,7 @@ export default function Hero() {
                 Hey!
               </motion.span>
               <br />
-              <TextAnimation delay={1} baseText={`I'm Jatin`} />
+              <TextAnimation delay={1} baseText={`I'm Jagatpati Parida`} />
             </div>
             <motion.div
               className="w-92 flex flex-col items-center justify-center gap-3 px-4 text-sm font-medium md:mt-12 md:flex-row lg:text-lg"
@@ -75,7 +75,7 @@ export default function Hero() {
 
               <a
                 className="borderBlack group flex w-64 cursor-pointer items-center justify-center gap-2 rounded-full bg-white px-7 py-3 text-black outline-none transition hover:bg-gray-100 dark:bg-white/10 dark:text-white dark:hover:bg-white/20 sm:w-auto"
-                href="/jatin.pdf"
+                href="https://drive.google.com/file/d/1fxeKYLiGxLryy76TT06Mv7BN68UtPP1D/view?usp=sharing"
                 download
               >
                 <span>Download CV</span>
@@ -84,14 +84,14 @@ export default function Hero() {
               <div className="flex gap-2">
                 <a
                   className="borderBlack flex h-[50px] w-[50px] cursor-pointer items-center justify-center gap-2 rounded-full bg-white p-2 text-black transition hover:bg-gray-100 hover:text-gray-950 dark:bg-white/10 dark:text-white/60 dark:hover:bg-white/20"
-                  href="https://www.linkedin.com/in/jatinyadav03/"
+                  href="https://www.linkedin.com/in/jagatpatiparida/"
                   target="_blank"
                 >
                   <Linkedin />
                 </a>
                 <a
                   className="borderBlack flex h-[50px] w-[50px] cursor-pointer items-center justify-center gap-2 rounded-full bg-white p-2 text-gray-700 transition hover:bg-gray-100 hover:text-gray-950 dark:bg-white/10 dark:text-white/60 dark:hover:bg-white/20"
-                  href="https://github.com/Jatin-0307"
+                  href="https://github.com/jagat1111"
                   target="_blank"
                 >
                   <AiOutlineGithub />

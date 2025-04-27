@@ -17,16 +17,16 @@ const educationData = [
   },
   {
     title: 'Intermidiate',
-    location: 'Samaritans Sen. Sec. School',
+    location: 'ODM Public School',
     description:
       'Studied Science and Math, excelled academically with a deep interest in tech.',
-    date: '2021-2022 ',
+    date: '2021-2022',
   },
   {
     title: 'Matriculation',
-    location: 'Samaritans Sen. Sec. School',
+    location: 'Delhi Public School',
     description: 'Began exploring computers and programming fundamentals.',
-    date: '2019-2020 ',
+    date: '2019-2020',
   },
 ];
 

@@ -50,27 +50,27 @@ export const images = {
 
 export const projectsData = [
   {
-    title: 'Food Delivery Website',
-    description: `A food delivery website that allows users to order food online from various restaurants.`,
+    title: 'Book Donation System',
+    description: `A platform for users to donate and request books, promoting a culture of sharing and sustainability.`,
     tags: ['React', 'Javascript', 'HTML', 'CSS', 'Nodejs'],
     imageUrl: auditMasterImg,
-    link: 'https://jatin-0307.github.io/food-delivery-website-reactjs/',
+    link: 'https://github.com/jagat1111/Book-Donation-System',
   },
   {
-    title: 'Gemini Chatbot',
+    title: 'Packet Sniffer',
     description:
-      'A chatbot that provides personalized responses to user queries using OpenAI API.',
-    tags: ['TypeScript', 'React', 'AI SDK', 'Next.js', 'Shadcn/ui', 'Tailwind'],
+      'A packet sniffer is a tool that captures and analyzes network traffic, allowing users to monitor data packets transmitted over a network.',
+    tags: ['python', 'socket programming'],
     imageUrl: accountingImg,
-    link: 'https://github.com/Jatin-0307/gemini-chatbot.git',
+    link: 'https://github.com/jagat1111/Packet-Sniffer',
   },
   {
-    title: 'Ecommerce Sales Dashboard',
+    title: 'Hotel Management System',
     description:
-      'Track, analyze, and optimize your online store performance in real-time.',
-    tags: ["PowerBI", "Data Analysis", "Data Visualization"],
+      'A web application for managing hotel operations, including room bookings, customer management, and billing.',
+    tags: ["React", "Javascript", "HTML", "CSS", "Nodejs"],
     imageUrl: filedriveImg,
-    link: 'https://github.com/Jatin-0307/Ecommerce-Sales-Dashboard-using-power-BI.git',
+    link: 'https://github.com/jagat1111/hotel-webpage',
   },
 ] as const;
 

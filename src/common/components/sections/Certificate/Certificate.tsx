@@ -8,48 +8,50 @@ import SectionHeading from '../../shared/section-heading';
 
 const certificates = [
   {
-    title: "R Programming",
-    issuer: "Coursera",
-    year: "2024",
-    image: "images/rProgramming.png",
-    url: "https://coursera.org/share/6910f4e935bfda6b6baa642ce1450962",
+    title: "Fundamentals of Red Hat Enterprise Linux",
+    issuer: "IBM Red Hat",
+    year: "2025",
+    image: "https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~APZBLBR5N0Q2/CERTIFICATE_LANDING_PAGE~APZBLBR5N0Q2.jpeg",
+    url: "https://drive.google.com/file/d/1Pxf9nxSRShYZKTEF923BcGIa1GRRYXZS/view?usp=sharing",
   },
   {
-    title: "Data Visualization",
-    issuer: "Coursera",
+    title: "Certified Ethical Hacker (CEH)",
+    issuer: "EC-Council",
     year: "2024",
-    image: "images/dataVisualization.png",
-    url: "https://coursera.org/share/0332bfb51b1a0ba06ba19c1b681dc62d",
+    image: "https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~D1GL0UT60T6H/CERTIFICATE_LANDING_PAGE~D1GL0UT60T6H.jpeg",
+    url: "https://drive.google.com/file/d/1MwslnzSw2CvYYsYOGxxeiDq3FU82KZzd/view?usp=sharing",
   },
   {
-    title: "Build AI Apps with ChatGPT",
-    issuer: "Coursera",
+    title: "Digital Forensics Essentials (DFE)",
+    issuer: "EC-Council",
     year: "2024",
-    image: "images/buildWithAi.png",
-    url: "https://coursera.org/share/6e22582dec7d37172e306c54d127d6d9",
+    image: "https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~GP1E7PXMZ7JC/CERTIFICATE_LANDING_PAGE~GP1E7PXMZ7JC.jpeg",
+    url: "https://drive.google.com/file/d/1b3ZbLt8_dXYyDt0mPz9FeIdmvciyfhfz/view?usp=sharing",
   },
   {
-    title: "C++ Programming",
-    issuer: "Coursera",
+    title: "Divide and Conquer, Sorting and Searching, and Randomized Algorithms",
+    issuer: "Stanford University Online",
     year: "2024",
-    image: "images/cpp.png",
-    url: "https://coursera.org/share/7094c289e814dcd43a0f4ba4713e64ee",
+    image: "https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~MMUV6JPPT6GT/CERTIFICATE_LANDING_PAGE~MMUV6JPPT6GT.jpeg",
+    url: "https://drive.google.com/file/d/1eR7usWGd74zl3bT42ijIuR7X9siabQXy/view?usp=sharing",
   },
   {
-    title: "Data Structures & Algorithms",
-    issuer: "Udemy",
+    title: "CompTIA Linux+",
+    issuer: "Cybrary",
     year: "2024",
-    image: "images/dsa.png",
-    url: "https://www.udemy.com/certificate/UC-225c8f30-65b2-4b53-a8ab-859883f626cf/",
+    image: "cybrary.png",
+    url: "https://drive.google.com/file/d/1lmg1UXl4_GqiPQrWkrsueGC93qRqpACc/view?usp=drive_link",
   },
   {
-    title: "Software Development Processes and Methodologies",
-    issuer: "Udemy",
-    year: "2024",
-    image: "images/softwareCertificate.png",
-    url: "https://coursera.org/share/e73cd2b2b037b9f220dcf30c077916e2",
+    title: "Introduction to Hardware and Operating Systems",
+    issuer: "IBM",
+    year: "2023",
+    image: "https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~XLWV98MRXY33/CERTIFICATE_LANDING_PAGE~XLWV98MRXY33.jpeg",
+    url: "https://drive.google.com/file/d/11spOPeM7sk8lVo5joryz_RJc3T7SbnKM/view?usp=sharing",
   },
+  
 ];
+
 
 export default function Certificate() {
   const { ref } = useSectionInView('Certificate');

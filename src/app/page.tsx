@@ -7,12 +7,14 @@ import Hero from "@/common/components/sections/hero/index";
 import Projects from "@/common/components/sections/projects/index";
 import Skills from "@/common/components/sections/skills/index";
 import Certificate from "@/common/components/sections/Certificate/Certificate";
+import Internship from "@/common/components/sections/internship/Internship";
 
 export default function Home() {
   return (
     <main className="flex min-h-screen w-full flex-col items-center p-0">
       <Hero />
       <About />
+      <Internship/>
       <Projects />
       <Experience />
       <Skills />
