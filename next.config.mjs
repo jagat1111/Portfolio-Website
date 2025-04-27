@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',  // Enable static exports
-  basePath: process.env.NODE_ENV === 'production' ? '/portfolio-website' : '', // Only use basePath in production
+  basePath: process.env.NODE_ENV === 'production' ? 'Portfolio-Website' : '', // Only use basePath in production
   images: {
     remotePatterns: [
       {
