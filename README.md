@@ -4,15 +4,12 @@
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
 ![Framer Motion](https://img.shields.io/badge/Framer%20Motion-0055FF?style=for-the-badge&logo=framer&logoColor=white)
 
-# PHOTOS
-![image](https://github.com/user-attachments/assets/14279386-e9c8-42d4-a33b-31959b899635)
-
 
 # ABOUT ME
 
-I'm a Front-end developer with expertise in TypeScript, React & Next.js. Proven ability to deliver user-centered web applications with a focus on intuitive experiences and user interaction.
+ I'm a Cyber Security Expert with extensive experience in identifying, mitigating, and preventing security vulnerabilities, including SQL injection and other critical threats. I have a strong background in securing web applications and systems, ensuring robust protection against evolving cyber threats.
 
-Seeking Web Development opportunities where I can leverage my skills to create meaningful connections between products and users.
+ I'm seeking opportunities to leverage my expertise in cyber security to safeguard digital infrastructures, improve security protocols, and protect sensitive data.
 
 So if you are interested, [CONTACT ME!](#contact)
 
