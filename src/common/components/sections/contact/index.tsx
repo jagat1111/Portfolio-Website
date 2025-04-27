@@ -13,10 +13,20 @@ export default function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const formRef = useRef<HTMLFormElement>(null);
   const [email, setEmail] = useState("");
-  
-  // Initialize EmailJS when component mounts
+
+  // ✅ Hardcoded EmailJS public values
+  const serviceID = "service_ve6slta"; // replace this
+  const templateID = "template_mtqwtvc"; // replace this
+  const publicKey = "VwHLyRBxoKa4w-YmP"; // replace this
+
+  /*
+  NEXT_PUBLIC_EMAILJS_SERVICE_ID=service_ve6slta
+NEXT_PUBLIC_EMAILJS_TEMPLATE_ID=template_mtqwtvc
+NEXT_PUBLIC_EMAILJS_PUBLIC_KEY=VwHLyRBxoKa4w-YmP
+  */
+
   useEffect(() => {
-    emailjs.init(process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || "");
+    emailjs.init(publicKey);
   }, []);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -26,27 +36,22 @@ export default function Contact() {
     try {
       if (!formRef.current) return;
 
-      // Create a hidden input for the name field (used for display in template)
+      // Create hidden input fields
       const hiddenNameInput = document.createElement("input");
       hiddenNameInput.type = "hidden";
       hiddenNameInput.name = "name";
-      hiddenNameInput.value = email; // Use the email as the name
+      hiddenNameInput.value = email;
       formRef.current.appendChild(hiddenNameInput);
 
-      // Create a hidden input for the email field (used for display in template)
       const hiddenEmailInput = document.createElement("input");
       hiddenEmailInput.type = "hidden";
       hiddenEmailInput.name = "email";
-      hiddenEmailInput.value = email; // Use the email as the email display
+      hiddenEmailInput.value = email;
       formRef.current.appendChild(hiddenEmailInput);
 
-      await emailjs.sendForm(
-        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "",
-        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "",
-        formRef.current
-      );
+      await emailjs.sendForm(serviceID, templateID, formRef.current);
 
-      // Remove the hidden inputs after sending
+      // Remove hidden inputs after sending
       formRef.current.removeChild(hiddenNameInput);
       formRef.current.removeChild(hiddenEmailInput);
 
@@ -57,7 +62,6 @@ export default function Contact() {
       console.error("Failed to send email:", error);
       const errorMessage = error instanceof Error ? error.message : "Failed to send email";
       toast.error(errorMessage);
-      
       toast.error("Please contact me directly at jagat0422@gmail.com");
     } finally {
       setIsSubmitting(false);
@@ -69,18 +73,10 @@ export default function Contact() {
       id="contact"
       ref={ref}
       className="flex w-full scroll-mt-12 flex-col items-center py-20 pb-44 text-center dark:bg-darkBg dark:text-white"
-      initial={{
-        opacity: 0.8,
-      }}
-      whileInView={{
-        opacity: 1,
-      }}
-      transition={{
-        duration: 0.5,
-      }}
-      viewport={{
-        once: true,
-      }}
+      initial={{ opacity: 0.8 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 0.5 }}
+      viewport={{ once: true }}
     >
       <SectionHeading>Hit me up!</SectionHeading>
       <div className="w-[min(100%,38rem)] px-4">
