@@ -58,7 +58,7 @@ export default function Contact() {
       const errorMessage = error instanceof Error ? error.message : "Failed to send email";
       toast.error(errorMessage);
       
-      toast.error("Please contact me directly at yadavjatin923@gmail.com");
+      toast.error("Please contact me directly at jagat0422@gmail.com");
     } finally {
       setIsSubmitting(false);
     }

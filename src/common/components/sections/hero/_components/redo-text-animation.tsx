@@ -11,7 +11,7 @@ export default function RedoTextAnimation({ delay }: IRedoTextAnimationProps) {
   const textIndex = useMotionValue(0);
 
   const texts = [
-    "I’m a coding ninja, ready to tackle any challenge!",
+    "I’m a cyber expert, ready to tackle any challenge!",
     "Pixels and code are my playground, let’s create magic!",
     "Simplicity is the ultimate sophistication in design.",
     "Debugging is like a treasure hunt, but with bugs!",
