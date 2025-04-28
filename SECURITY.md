@@ -14,7 +14,7 @@ If you discover a security vulnerability in this project, we appreciate your eff
 
 1. **Do not create a public issue** on GitHub or any other public platform to report security vulnerabilities. This is to prevent the information from being accessible to malicious users before a fix is released.
 
-2. **Contact us directly** via email at [anthoniotheruiner@gmail.com](mailto:anthoniotheruiner@gmail.com). Provide as much information as possible, including:
+2. **Contact us directly** via email at [jagat0422@gmail.com](mailto:jagat0422@gmail.com). Provide as much information as possible, including:
    - A detailed description of the vulnerability.
    - Steps to reproduce the vulnerability.
    - Potential impact and any proof of concept (POC) code if available.
@@ -35,6 +35,6 @@ To ensure the security of your deployment, we recommend the following best pract
 
 ## Contact
 
-If you have any questions or concerns about our security policy, please reach out at [anthoniotheruiner@gmail.com](mailto:anthoniotheruiner@gmail.com).
+If you have any questions or concerns about our security policy, please reach out at [jagat0422@gmail.com](mailto:jagat0422@gmail.com).
 
 Thank you for helping us keep our project safe and secure!
