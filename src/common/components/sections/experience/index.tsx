@@ -16,7 +16,7 @@ const educationData = [
     date: '2022 - 2026',
   },
   {
-    title: 'Intermidiate',
+    title: 'Intermediate',
     location: 'ODM Public School',
     description:
       'Studied Science and Math, excelled academically with a deep interest in tech.',
